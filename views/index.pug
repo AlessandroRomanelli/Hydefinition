@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  .cover
+    a#logo(href="#")
+      img.heartbeat(src='img/arma3.png', width='350')
+      strong.text-uppercase.text-center Click to enter
+      div.lds-ring
+        div
+        div
+        div
+        div
+  .wrapper
+    nav
+      ul.text-center.text-uppercase.title
+        li 
+          a(href='#') About
+        li 
+          a(href='#') Logo
+        li 
+          a(href='#') ArmA3 
+        li 
+          a(href='#') PostScriptum
+        li 
+          a(href='#') Forum
+        //- i.fas.fa-bars.float-right
+      
+    div.image.para
+      
+    header.title.text-center.text-uppercase
+      h1 Hydefinition
+      p Gaming Community
+      
+    section.title.description.text-uppercase
+      h3.text-center Immersive <b>&ndash;</b> tactical <b>&ndash;</b> fun
+      
+    div.image.sherman
+      
+    section.about
+      h1.title.text-uppercase.text-center Who are we?
+      p.text-justify We are a community of dedicated PC-based gamers, which aim to get the best possible experience out of simulative and realistic first person shooters. 
+        br 
+        br 
+        | We have started two gaming groups: a milsim unit on <b>ArmA3</b> &mdash; where we focus on mission making and campaigns battling against AI &mdash; and a unit on <b>Post Scriptum</b>, which is more <b>PvP</b> oriented. 
+
+    section.chooser
+      a.arma(href='http://www.no4commando.com')
+        img(src='img/arma3.png', width='150')
+      a.ps(href='#')
+        img(src='img/ps.png', width='75')
+    footer.text-center
+      small Alessandro Romanelli &copy; 2017 - 2018
+      
