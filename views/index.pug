@@ -2,25 +2,27 @@ extends layout
 
 block content
   .cover
-    a#logo(href="#")
-      img.heartbeat(src='img/arma3.png', width='350')
-      strong.text-uppercase.text-center Click to enter
+    .background
       div.lds-ring
         div
         div
         div
         div
+      a#logo(href="#")
+        img.heartbeat(src='img/logo.png', width='220')
+        strong.text-uppercase.text-center Click to enter
   .wrapper
     nav
       ul.text-center.text-uppercase.title
         li 
           a(href='#') About
+        li
+          a.logo(href='#')
+            img(src='/img/logo.png' width='30')
         li 
-          a(href='#') Logo
+          a(href='#') No.4 CDO 
         li 
-          a(href='#') ArmA3 
-        li 
-          a(href='#') PostScriptum
+          a(href='#') Red Devils
         li 
           a(href='#') Forum
         //- i.fas.fa-bars.float-right

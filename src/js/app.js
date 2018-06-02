@@ -4,7 +4,7 @@ $(document).ready(function() {
   } else {
     sessionStorage.hasVisited = true
   }
-  $('#logo').on('click', function() {
+  $('.background').on('click', function() {
     $(this).parent().addClass("hidden")
   })
 })
