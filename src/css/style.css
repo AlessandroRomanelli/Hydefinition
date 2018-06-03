@@ -228,13 +228,51 @@ nav a:not(.logo) {
 .text-uppercase {
   text-transform: uppercase; }
 
+section p a,
+section a h4 {
+  position: relative;
+  text-decoration: none; }
+  section p a:before,
+  section a h4:before {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffd026;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; }
+  section p a:hover:before,
+  section a h4:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    background-color: #ffe68c; }
+
 * {
   box-sizing: border-box; }
+
+a:link {
+  color: #ffd026;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.1s ease-in-out; }
+
+a:visited {
+  color: #bf9600; }
+
+a:hover {
+  color: #ffe68c; }
 
 body {
   margin: 0;
   background-color: #222;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden; }
 
 ul {
   display: none;
@@ -247,8 +285,8 @@ b {
   display: grid;
   grid-row-gap: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 350px auto auto 150px auto 150px 50px;
-  grid-template-areas: "head" "para" "title" "description" "sherman" "about" "chooser" "footer"; }
+  grid-template-rows: 30px 350px auto auto 150px auto 50px;
+  grid-template-areas: "head" "para" "title" "description" "sherman" "about" "footer"; }
 
 nav {
   padding: 0 10px;
@@ -261,7 +299,7 @@ nav {
       filter: invert(1);
       transition: 0.2s ease-in-out; }
       nav ul li a.logo img:hover {
-        transform: scale(1.25); }
+        transform: scale(1.25) rotate(5deg); }
   nav a:link,
   nav a:visited {
     color: rgba(255, 255, 255, 0.75);
@@ -308,39 +346,98 @@ div.sherman {
   grid-area: sherman; }
 
 section.about {
+  position: relative;
   padding: 0 20px;
   font-size: 1.25em;
-  grid-area: about; }
-  section.about h1 {
+  grid-area: about;
+  background-color: rgba(34, 34, 34, 0.9); }
+  section.about * {
     position: relative; }
-    section.about h1:after {
+  section.about h1:after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffd026; }
+  section.about h3 {
+    margin-bottom: 0; }
+  section.about .about-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+    section.about .about-bg:before {
       content: '';
       position: absolute;
-      bottom: -7px;
-      left: 0;
+      top: 0;
+      left: -50%;
       width: 100%;
-      height: 2px;
-      background: #ffd026; }
+      height: 70%;
+      background: url("../img/jump.jpg") no-repeat center;
+      background-color: #222;
+      background-size: contain;
+      opacity: 0.75;
+      z-index: -1; }
+    section.about .about-bg:after {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 100%;
+      height: 70%;
+      background: url("../img/landing.jpg") no-repeat center;
+      background-color: #222;
+      background-size: contain;
+      opacity: 0.75;
+      z-index: -1; }
 
-section.chooser {
+.chooser {
+  height: 100px;
   display: grid;
-  grid-area: chooser;
   grid-template-columns: 1fr 1fr; }
-  section.chooser .arma,
-  section.chooser .ps {
+  .chooser .arma,
+  .chooser .ps {
     position: relative; }
-    section.chooser .arma img,
-    section.chooser .ps img {
+    .chooser .arma img,
+    .chooser .ps img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       transition: 0.2s ease-in-out; }
-    section.chooser .arma:hover img,
-    section.chooser .ps:hover img {
-      transform: translate(-50%, -50%) scale(1.25); }
-  section.chooser .arma img {
+    .chooser .arma:hover img,
+    .chooser .ps:hover img {
+      transform: translate(-50%, -50%) scale(1.15);
+      filter: drop-shadow(0 0 10px black); }
+  .chooser .arma img {
     left: 70%; }
+
+.units {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr; }
+  .units div {
+    position: relative;
+    padding: 25px 20px; }
+    .units div > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      z-index: 0;
+      opacity: 0.25;
+      transition: 0.25s ease-in-out; }
+    .units div:hover img {
+      opacity: 0.65;
+      transform: translate(-50%, -50%) scale(1); }
+    .units div > *:not(img) {
+      position: relative; }
+  .units h4 {
+    display: inline-block;
+    margin: 0; }
+  .units p {
+    font-size: 0.8em; }
 
 footer {
   grid-area: footer;
@@ -426,8 +523,8 @@ footer {
   .wrapper {
     grid-row-gap: 0;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 60px 300px auto auto 150px auto 100px 50px;
-    grid-template-areas: "head head head" "para para para" ". title ." ". description ." "sherman sherman sherman" ". about ." ". chooser ." ". footer ."; }
+    grid-template-rows: 60px 300px auto auto 150px auto 50px;
+    grid-template-areas: "head head head" "para para para" ". title ." ". description ." "sherman sherman sherman" ". about ." ". footer ."; }
   nav {
     padding: 0 10px;
     grid-column: 1 / -1; }
@@ -442,8 +539,8 @@ footer {
   .wrapper {
     grid-row-gap: 0;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 60px 500px auto auto 300px auto 100px 50px;
-    grid-template-areas: "head head head" "para para para" ". title ." "description description description" "sherman sherman sherman" ". about ." ". chooser ." ". footer ."; }
+    grid-template-rows: 60px 500px auto auto 300px auto 50px;
+    grid-template-areas: "head head head" "para para para" ". title ." "description description description" "sherman sherman sherman" ". about ." ". footer ."; }
   nav {
     padding: 0 10px; }
     nav ul {
@@ -460,4 +557,18 @@ footer {
   section.description {
     font-size: 2em; }
   section.about {
-    font-size: 1.25em; } }
+    font-size: 1.25em; }
+  .units {
+    grid-template-columns: 1fr 1fr; } }
+
+@media (max-width: 1920px) {
+  .about-bg:before {
+    width: 400%;
+    height: 100%; }
+  .about-bg:after {
+    width: 400%;
+    height: 100%; } }
+
+@media (min-width: 1920px) {
+  .wrapper {
+    grid-template-columns: 1fr 900px 1fr; } }

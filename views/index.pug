@@ -39,17 +39,43 @@ block content
     div.image.sherman
       
     section.about
+      .about-bg
       h1.title.text-uppercase.text-center Who are we?
-      p.text-justify We are a community of dedicated PC-based gamers, which aim to get the best possible experience out of simulative and realistic first person shooters. 
-        br 
-        br 
-        | We have started two gaming groups: a milsim unit on <b>ArmA3</b> &mdash; where we focus on mission making and campaigns battling against AI &mdash; and a unit on <b>Post Scriptum</b>, which is more <b>PvP</b> oriented. 
+      p.text-justify We are a community of PC-based gamers, which aim to get the best possible experience out of simulative and realistic first person shooters. 
 
-    section.chooser
-      a.arma(href='http://www.no4commando.com')
-        img(src='img/arma3.png', width='150')
-      a.ps(href='#')
-        img(src='img/ps.png', width='75')
+      p.text-center We are active in the following games:
+        //- | We have started two distinct gaming groups: a milsim unit on <a id='arma3' href='https://arma3.com' target='_blank'>ArmA 3</a> &mdash; where we focus on mission making and campaigns battling against AI &mdash; and a unit on <a id='ps' href='https://postscriptumgame.com' target='_blank'>Post Scriptum</a>, which is more <b>PvP</b> oriented: 
+
+      .chooser
+        a.arma(href='https://arma3.com')
+          img(src='img/arma3.png', width='150')
+        a.ps(href='#')
+          img(src='img/ps.png', width='75')
+            
+      h3.title.text-uppercase.text-center Our units:
+      .units
+        .no4.text-center
+          img(src='/img/no4.png' width='200vw')
+          a(href='http://no4commando.com')
+            h4.text-uppercase No.4 Commando
+            br
+          small 1st Special Service Brigade
+          p.text-justify 
+            | The Commandos were a special force created in World War 2 with the specific purpose to conduct raids against the Nazi German army throughout occupied Europe.
+            br 
+            br 
+            | This group aims to reenact the heroic actions of this division by impersonating the lives of the members belonging to the fourth unit.
+        .rd.text-center
+          img(src='/img/rd.png' width='200vw')
+          a(href='#')
+            h4.text-uppercase Red Devils
+            br
+          small 1st Airborne Division
+          p.text-justify
+            | The 1st Airborne Division, one of the two airborne division raised by the British Army during World War 2 that saw action throughtout the European and African theaters.
+            br
+            br
+            | As a Post Scriptum unit, the focus of the group is mostly open public play, with private events being carried out during the weekends.
     footer.text-center
       small Alessandro Romanelli &copy; 2017 - 2018
       
