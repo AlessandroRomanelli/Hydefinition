@@ -317,7 +317,7 @@ div.para {
   background: url("../img/bridge.jpg") no-repeat center;
   background-size: cover;
   border-bottom: 1px solid #3c3c3c;
-  background-position: 80% 60%;
+  background-position: 80% 40%;
   background-size: cover;
   grid-area: para; }
 
@@ -337,7 +337,7 @@ div.sherman {
   background-size: cover;
   border-top: 1px solid #3c3c3c;
   border-bottom: 1px solid #3c3c3c;
-  background-position: 50% 40%;
+  background-position: 50% 0%;
   grid-area: sherman; }
 
 section.about {

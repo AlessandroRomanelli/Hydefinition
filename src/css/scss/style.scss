@@ -97,7 +97,7 @@ nav {
 div.para {
   @include        make-img-container("../img/bridge.jpg");
   border-bottom : 1px solid $light;
-  background-position : 80% 60%;
+  background-position : 80% 40%;
   background-size: cover;
   grid-area     : para;
 }
@@ -131,7 +131,7 @@ div.sherman {
   @include              make-img-container("../img/rifle.jpg");
   border-top          : 1px solid $light;
   border-bottom       : 1px solid $light;
-  background-position : 50% 40%;
+  background-position : 50% 0%;
   grid-area           : sherman;
 }
 
