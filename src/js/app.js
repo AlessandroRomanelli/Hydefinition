@@ -26,13 +26,18 @@ function toggleLoader() {
 $(document).ready(function() {
   toggleLoader();
   $(document).scroll(function () {
-    if (window.scrollY > 0 && window.scrollY < 550) {
-      var deplaceY = ""+(40 + 60*(window.scrollY/550)+"%");
+    var startY1 = 0
+    var endY1 = 550
+    if (window.scrollY > startY1 && window.scrollY < endY1) {
+      var deplaceY = ""+(40 + 60*(window.scrollY/(endY1-startY1))+"%");
       $('.image.para').css('background-position', "50% "+deplaceY)
     }
-    if (window.scrollY > 350 && window.scrollY < 800) {
+
+    var startY2 = 0;
+    var endY2 = 800
+    if (window.scrollY > startY2 && window.scrollY < endY2) {
       console.log(window.scrollY)
-      var deplaceY = ""+(100*((window.scrollY-350)/450))+"%"
+      var deplaceY = ""+(100*(((window.scrollY-startY2)*(window.innerHeight/1200))/(endY2-startY2)))+"%"
       $('.image.sherman').css('background-position', '50% '+deplaceY)
     }
   });
