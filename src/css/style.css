@@ -285,8 +285,8 @@ b {
   display: grid;
   grid-row-gap: 0;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 350px auto auto 150px auto 50px;
-  grid-template-areas: "head" "para" "title" "description" "sherman" "about" "footer"; }
+  grid-template-rows: 30px 350px auto 150px auto 50px;
+  grid-template-areas: "head" "para" "title" "sherman" "about" "footer"; }
 
 nav {
   padding: 0 10px;
@@ -318,7 +318,7 @@ div.para {
   background-size: cover;
   border-bottom: 1px solid #3c3c3c;
   background-position: 80% 60%;
-  background-size: auto;
+  background-size: cover;
   grid-area: para; }
 
 header {
@@ -329,14 +329,6 @@ header {
     margin-top: -5px;
     color: #ffd026;
     letter-spacing: 3px; }
-
-section.description {
-  padding: 0 10px;
-  grid-area: description;
-  letter-spacing: 3px;
-  font-size: 0.75em; }
-  section.description h3 {
-    margin-top: 0; }
 
 div.sherman {
   width: 100%;
@@ -532,8 +524,8 @@ footer {
   .wrapper {
     grid-row-gap: 0;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 60px 300px auto auto 150px auto 50px;
-    grid-template-areas: "head head head" "para para para" ". title ." ". description ." "sherman sherman sherman" ". about ." ". footer ."; }
+    grid-template-rows: 60px 300px auto 150px auto 50px;
+    grid-template-areas: "head head head" "para para para" ". title ." "sherman sherman sherman" ". about ." ". footer ."; }
   section.about:before {
     background-color: rgba(34, 34, 34, 0.8);
     box-shadow: 0 10px 10px 0 #090909; }
@@ -559,8 +551,8 @@ footer {
   .wrapper {
     grid-row-gap: 0;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 60px 500px auto auto 300px auto 50px;
-    grid-template-areas: "head head head" "para para para" ". title ." "description description description" "sherman sherman sherman" ". about ." ". footer ."; }
+    grid-template-rows: 60px 500px auto 300px auto 50px;
+    grid-template-areas: "head head head" "para para para" ". title ." "sherman sherman sherman" ". about ." ". footer ."; }
   nav {
     padding: 0 10px; }
     nav ul {
@@ -573,10 +565,8 @@ footer {
     font-size: 2em; }
     header p {
       margin-top: -15px;
+      margin-bottom: 40px;
       letter-spacing: 5px; }
-  section.description {
-    font-size: 2em;
-    letter-spacing: 4px; }
   section.about {
     font-size: 1.25em; }
     section.about .about-bg {
