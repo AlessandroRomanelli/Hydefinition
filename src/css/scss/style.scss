@@ -94,6 +94,10 @@ nav {
   }
 }
 
+div.image {
+  box-shadow: inset 0 0 15px 5px $dark;
+}
+
 div.para {
   @include        make-img-container("../img/bridge.jpg");
   border-bottom : 1px solid $light;
@@ -412,7 +416,7 @@ footer {
     padding     : 0 10px;
     grid-column : 1 / -1;
     z-index: 50;
-    box-shadow: 0 3px 10px 0 darken($dark, 10);
+    // box-shadow: 0 3px 10px 0 darken($dark, 10);
 
     ul {
       display : block;
