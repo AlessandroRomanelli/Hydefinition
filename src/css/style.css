@@ -314,9 +314,11 @@ nav {
 div.para {
   width: 100%;
   height: 100%;
-  background: url("../img/para.jpg") no-repeat center;
+  background: url("../img/bridge.jpg") no-repeat center;
   background-size: cover;
   border-bottom: 1px solid #3c3c3c;
+  background-position: 80% 60%;
+  background-size: auto;
   grid-area: para; }
 
 header {
@@ -339,11 +341,11 @@ section.description {
 div.sherman {
   width: 100%;
   height: 100%;
-  background: url("../img/sherman.jpg") no-repeat center;
+  background: url("../img/rifle.jpg") no-repeat center;
   background-size: cover;
   border-top: 1px solid #3c3c3c;
   border-bottom: 1px solid #3c3c3c;
-  background-position: 50% 70%;
+  background-position: 50% 40%;
   grid-area: sherman; }
 
 section.about {

@@ -95,8 +95,10 @@ nav {
 }
 
 div.para {
-  @include        make-img-container("../img/para.jpg");
+  @include        make-img-container("../img/bridge.jpg");
   border-bottom : 1px solid $light;
+  background-position : 80% 60%;
+  background-size: auto;
   grid-area     : para;
 }
 
@@ -126,10 +128,10 @@ section.description {
 }
 
 div.sherman {
-  @include              make-img-container("../img/sherman.jpg");
+  @include              make-img-container("../img/rifle.jpg");
   border-top          : 1px solid $light;
   border-bottom       : 1px solid $light;
-  background-position : 50% 70%;
+  background-position : 50% 40%;
   grid-area           : sherman;
 }
 
