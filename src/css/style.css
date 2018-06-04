@@ -352,8 +352,7 @@ section.about {
   position: relative;
   padding: 0 20px;
   font-size: 1.25em;
-  grid-area: about;
-  background-color: rgba(34, 34, 34, 0.5); }
+  grid-area: about; }
   section.about * {
     position: relative;
     z-index: 10; }
@@ -450,7 +449,8 @@ section.about {
 
 footer {
   grid-area: footer;
-  line-height: 50px; }
+  line-height: 50px;
+  z-index: 50; }
 
 .wrapper > * {
   color: white;
@@ -535,7 +535,8 @@ footer {
     grid-template-rows: 60px 300px auto auto 150px auto 50px;
     grid-template-areas: "head head head" "para para para" ". title ." ". description ." "sherman sherman sherman" ". about ." ". footer ."; }
   section.about:before {
-    background-color: rgba(34, 34, 34, 0.95); }
+    background-color: rgba(34, 34, 34, 0.8);
+    box-shadow: 0 10px 10px 0 #090909; }
   section.about .about-bg {
     width: 150%;
     left: -25%;

@@ -140,7 +140,7 @@ section.about {
   padding   : 0 20px;
   font-size : 1.25em;
   grid-area : about;
-  background-color: transparentize($dark, 0.5);
+  // background-color: transparentize($dark, 0.5);
 
   * {
     position: relative;
@@ -274,6 +274,7 @@ section.about {
 footer {
   grid-area   : footer;
   line-height : 50px;
+  z-index: 50;
 }
 
 .wrapper > * {
@@ -391,7 +392,8 @@ footer {
 
   section.about {
     &:before{
-      background-color: transparentize($dark, 0.05);
+      background-color: transparentize($dark, 0.2);
+      box-shadow: 0 10px 10px 0 darken($dark, 10);
     }
     .about-bg {
       width: 150%;
