@@ -411,6 +411,8 @@ footer {
   nav {
     padding     : 0 10px;
     grid-column : 1 / -1;
+    z-index: 50;
+    box-shadow: 0 3px 10px 0 darken($dark, 10);
 
     ul {
       display : block;
