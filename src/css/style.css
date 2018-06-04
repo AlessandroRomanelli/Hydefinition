@@ -331,7 +331,8 @@ header {
 section.description {
   padding: 0 10px;
   grid-area: description;
-  letter-spacing: 4px; }
+  letter-spacing: 3px;
+  font-size: 0.75em; }
   section.description h3 {
     margin-top: 0; }
 
@@ -350,9 +351,10 @@ section.about {
   padding: 0 20px;
   font-size: 1.25em;
   grid-area: about;
-  background-color: rgba(34, 34, 34, 0.9); }
+  background-color: rgba(34, 34, 34, 0.5); }
   section.about * {
-    position: relative; }
+    position: relative;
+    z-index: 10; }
   section.about h1:after {
     content: '';
     position: absolute;
@@ -363,34 +365,39 @@ section.about {
     background: #ffd026; }
   section.about h3 {
     margin-bottom: 0; }
-  section.about .about-bg {
+  section.about:before {
+    content: '';
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: 100%; }
-    section.about .about-bg:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -50%;
-      width: 100%;
-      height: 70%;
+    background: transparent;
+    z-index: 5; }
+  section.about .about-bg {
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(16, 1fr); }
+    section.about .about-bg > div {
+      box-shadow: inset 0 0 30px 20px #222; }
+    section.about .about-bg > div:nth-child(1) {
       background: url("../img/jump.jpg") no-repeat center;
-      background-color: #222;
-      background-size: contain;
-      opacity: 0.75;
-      z-index: -1; }
-    section.about .about-bg:after {
-      content: '';
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      width: 100%;
-      height: 70%;
+      background-size: cover;
+      grid-column: 1 / -1;
+      grid-row: 2 / 8;
+      opacity: 0.5; }
+    section.about .about-bg > div:nth-child(2) {
       background: url("../img/landing.jpg") no-repeat center;
-      background-color: #222;
-      background-size: contain;
-      opacity: 0.75;
-      z-index: -1; }
+      background-size: cover;
+      grid-column: 1 / -1;
+      grid-row: 10 / 16;
+      opacity: 0.5; }
 
 .chooser {
   height: 100px;
@@ -519,12 +526,22 @@ footer {
 .cover.hidden {
   transform: translate(0, -100%); }
 
-@media (min-width: 640px) and (max-width: 1024px) {
+@media (min-width: 640px) {
   .wrapper {
     grid-row-gap: 0;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 60px 300px auto auto 150px auto 50px;
     grid-template-areas: "head head head" "para para para" ". title ." ". description ." "sherman sherman sherman" ". about ." ". footer ."; }
+  section.about:before {
+    background-color: rgba(34, 34, 34, 0.95); }
+  section.about .about-bg {
+    width: 150%;
+    left: -25%;
+    grid-template-rows: repeat(12, 1fr); }
+    section.about .about-bg > div:nth-child(1) {
+      grid-row: 2 / 8; }
+    section.about .about-bg > div:nth-child(2) {
+      grid-row: 9 / 13; }
   nav {
     padding: 0 10px;
     grid-column: 1 / -1; }
@@ -555,20 +572,38 @@ footer {
       margin-top: -15px;
       letter-spacing: 5px; }
   section.description {
-    font-size: 2em; }
+    font-size: 2em;
+    letter-spacing: 4px; }
   section.about {
     font-size: 1.25em; }
+    section.about .about-bg {
+      width: 200%;
+      left: -50%;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr); }
+      section.about .about-bg > div:nth-child(1) {
+        grid-column: 1 / 7;
+        grid-row: 1 / 5;
+        opacity: 0.8; }
+      section.about .about-bg > div:nth-child(2) {
+        grid-column: 7 / -1;
+        grid-row: 3 / 7;
+        opacity: 0.8; }
   .units {
     grid-template-columns: 1fr 1fr; } }
 
-@media (max-width: 1920px) {
-  .about-bg:before {
-    width: 400%;
-    height: 100%; }
-  .about-bg:after {
-    width: 400%;
-    height: 100%; } }
-
 @media (min-width: 1920px) {
   .wrapper {
-    grid-template-columns: 1fr 900px 1fr; } }
+    grid-template-columns: 1fr 900px 1fr; }
+  section.about .about-bg {
+    width: 100vw;
+    --width: 100vw;
+    left: calc(0px - (var(--width) - 100%)/2);
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(5, 1fr); }
+    section.about .about-bg > div:nth-child(1) {
+      grid-column: 1 / 9;
+      grid-row: 1 / 5; }
+    section.about .about-bg > div:nth-child(2) {
+      grid-column: 9 / -1;
+      grid-row: 2 / 7; } }
