@@ -226,16 +226,16 @@ section.about {
       img {
 
         transform : translate(-50%, -50%) scale(1.15);
-        filter: drop-shadow(0 0 10px black);
+        filter: drop-shadow(0 0 5px darken($dark, 10));
       }
     }
   }
 
-  .arma {
-    img {
-      left : 70%;
-    }
-  }
+  // .arma {
+  //   img {
+  //     left : 50%;
+  //   }
+  // }
 }
 
 .units {

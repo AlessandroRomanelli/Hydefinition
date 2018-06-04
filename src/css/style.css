@@ -409,9 +409,7 @@ section.about {
     .chooser .arma:hover img,
     .chooser .ps:hover img {
       transform: translate(-50%, -50%) scale(1.15);
-      filter: drop-shadow(0 0 10px black); }
-  .chooser .arma img {
-    left: 70%; }
+      filter: drop-shadow(0 0 5px #090909); }
 
 .units {
   position: relative;
